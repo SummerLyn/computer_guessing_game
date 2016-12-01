@@ -1,3 +1,13 @@
+"""
+
+>>> check_number(8, 7, 100, 1)
+True
+
+>>> check_number(95, 95, 100, 1)
+False
+
+"""
+
 guess_count = 0
 upper_bound = 100
 lower_bound = 1
@@ -14,7 +24,7 @@ def generate_user_number(upper_bound, lower_bound):
     if user_number < lower_bound or user_number > upper_bound:
         user_number = int(input("Your number is outside the parameters. Please choose a different number. >> "))
 
-        
+
 
 
 
