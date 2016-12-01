@@ -44,3 +44,5 @@ def main(upper_bound, lower_bound):
     while check_number(user_number, comp_number, upper_bound, lower_bound):
         computer_guess(upper_bound, lower_bound)
     print("It took the computer {} guesses to find {}.".format(guess_count, user_number))
+
+main(upper_bound, lower_bound)
