@@ -1,3 +1,13 @@
+"""
+
+>>> check_number(8, 7, 100, 1)
+True
+
+>>> check_number(95, 95, 100, 1)
+False
+
+"""
+
 guess_count = 0
 upper_bound = 100
 lower_bound = 1
@@ -35,16 +45,16 @@ def check_number(user_number, comp_number, upper_bound, lower_bound):
     """
     input: user_number, comp_number, upper and lower bounds as integers
     usage: compares user_number to comp_number and changes one boundary
-    output: True if numbers match, false otherwise
+    output: False if numbers match, True otherwise
     """
     if user_number == comp_number:
-        return True
+        return False
     else:
         if comp_number > user_number:
-            upper_bound = comp_number
+            upper_bound = comp_number - 1
         elif comp_number < user_number:
-            lower_bound = comp_number
-        return False
+            lower_bound = comp_number + 1
+        return True
 
 def main(upper_bound, lower_bound):
     """
