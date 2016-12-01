@@ -20,7 +20,7 @@ def generate_user_number(upper_bound, lower_bound):
     """
     user_number = int(input("Hi! Choose a number between 1 and 100! >> "))
     return user_number
-
+    
     if user_number < lower_bound or user_number > upper_bound:
         user_number = int(input("Your number is outside the parameters. Please choose a different number. >> "))
 
