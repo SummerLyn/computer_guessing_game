@@ -8,6 +8,14 @@ def generate_user_number(upper_bound, lower_bound):
     usage: ask user for number between bounds and confirm w/ if statement
     output: user's number as integer
     """
+    user_number = int(input("Hi! Choose a number between 1 and 100! >> "))
+    return user_number
+
+    if user_number < lower_bound or user_number > upper_bound:
+        user_number = int(input("Your number is outside the parameters. Please choose a different number. >> "))
+
+        
+
 
 
 def computer_guess(upper_bound, lower_bound):
@@ -44,3 +52,5 @@ def main(upper_bound, lower_bound):
     while check_number(user_number, comp_number, upper_bound, lower_bound):
         computer_guess(upper_bound, lower_bound)
     print("It took the computer {} guesses to find {}.".format(guess_count, user_number))
+
+main(upper_bound, lower_bound)
