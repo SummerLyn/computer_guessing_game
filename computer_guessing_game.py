@@ -32,7 +32,14 @@ def check_number(user_number, comp_number, upper_bound, lower_bound):
     usage: compares user_number to comp_number and changes one boundary
     output: True if numbers match, false otherwise
     """
-
+    if user_number == comp_number:
+        return True
+    else:
+        if comp_number > user_number:
+            upper_bound = comp_number
+        elif comp_number < user_number:
+            lower_bound = comp_number
+        return False
 
 def main(upper_bound, lower_bound):
     """
