@@ -9,6 +9,7 @@ def generate_user_number(upper_bound, lower_bound):
     output: user's number as integer
     """
 
+
 def computer_guess(upper_bound, lower_bound):
     """
     input: upper and lower bounds as integers
@@ -16,12 +17,14 @@ def computer_guess(upper_bound, lower_bound):
     output: computer's guess as integer, increments guess_count by 1
     """
 
+
 def check_number(user_number, comp_number, upper_bound, lower_bound):
     """
     input: user_number, comp_number, upper and lower bounds as integers
     usage: compares user_number to comp_number and changes one boundary
     output: True if numbers match, false otherwise
     """
+
 
 def main(upper_bound, lower_bound):
     """
