@@ -8,11 +8,11 @@ False
 
 """
 
-guess_count = 0
+guess_count = 0 # this global variable needs to be local to the functions so that when it is called by the print in main function it gives the local value, not the global value
 upper_bound = 100
 lower_bound = 1
 comp_number = 0
-user_number = 0
+user_number = 0 # this global variable needs to be local to the functions so that when it is called by the print in main function it gives the local value, not the global value
 
 def generate_user_number(upper_bound, lower_bound):
     """
