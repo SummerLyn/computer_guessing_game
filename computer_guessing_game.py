@@ -1,6 +1,7 @@
 guess_count = 0
 upper_bound = 100
 lower_bound = 1
+comp_number = 0
 
 def generate_user_number(upper_bound, lower_bound):
     """
@@ -14,7 +15,7 @@ def generate_user_number(upper_bound, lower_bound):
     if user_number < lower_bound or user_number > upper_bound:
         user_number = int(input("Your number is outside the parameters. Please choose a different number. >> "))
 
-        
+
 
 
 
@@ -24,6 +25,10 @@ def computer_guess(upper_bound, lower_bound):
     usage: generate computer guess, starting at 1 and incrementing by 1
     output: computer's guess as integer, increments guess_count by 1
     """
+
+    comp_number += 1
+    return comp_number
+    guess_count += 1
 
 
 def check_number(user_number, comp_number, upper_bound, lower_bound):
