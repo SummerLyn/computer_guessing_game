@@ -46,9 +46,9 @@ def check_number(user_number, comp_number, upper_bound, lower_bound):
         return False
     else:
         if comp_number > user_number:
-            upper_bound = comp_number
+            upper_bound = comp_number - 1
         elif comp_number < user_number:
-            lower_bound = comp_number
+            lower_bound = comp_number + 1
         return True
 
 def main(upper_bound, lower_bound):
