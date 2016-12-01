@@ -56,6 +56,8 @@ def check_number(user_number, comp_number, upper_bound, lower_bound):
             lower_bound = comp_number + 1
         return True
 
+
+
 def main(upper_bound, lower_bound):
     """
     input: upper and lower bounds
