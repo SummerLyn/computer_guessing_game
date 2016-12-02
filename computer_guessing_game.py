@@ -8,11 +8,8 @@ False
 
 """
 
-guess_count = 0 # this global variable needs to be local to the functions so that when it is called by the print in main function it gives the local value, not the global value
 upper_bound = 100
 lower_bound = 1
-comp_number = 0
-user_number = 0 # this global variable needs to be local to the functions so that when it is called by the print in main function it gives the local value, not the global value
 
 def generate_user_number(upper_bound, lower_bound):
     """
@@ -21,11 +18,11 @@ def generate_user_number(upper_bound, lower_bound):
     output: user's number as integer
     """
     user_number = int(input("Hi! Choose a number between 1 and 100! >> "))
-    return user_number
     if user_number < lower_bound or user_number > upper_bound:
         user_number = int(input("Your number is outside the parameters. Please choose a different number. >> "))
+    return user_number
 
-def computer_guess(comp_number, guess_count):
+def computer_guess(upper_bound, lower_bound, guess_count):
     """
     input: upper and lower bounds as integers
     usage: generate computer guess, starting at 1 and incrementing by 1
@@ -33,7 +30,6 @@ def computer_guess(comp_number, guess_count):
     """
     comp_number = guess_count + 1
     return comp_number
-    guess_count += 1
 
 def check_number(user_number, comp_number, upper_bound, lower_bound):
     """
@@ -50,16 +46,18 @@ def check_number(user_number, comp_number, upper_bound, lower_bound):
             lower_bound = comp_number + 1
         return True
 
-def main(upper_bound, lower_bound, user_number, comp_number, guess_count):
+def main(upper_bound, lower_bound):
     """
     input: upper and lower bounds
     usage: calls all functions necessary to execute guessing game
     output: print statement describing how many guesses the comp needed
     """
-    generate_user_number(upper_bound, lower_bound)
-    computer_guess(comp_number, guess_count)
+    guess_count = 0
+    user_number = generate_user_number(upper_bound, lower_bound)
+    comp_number = computer_guess(upper_bound, lower_bound)
     while check_number(user_number, comp_number, upper_bound, lower_bound):
         computer_guess(upper_bound, lower_bound)
+        guess_count += 1
     print("It took the computer {} guesses to find {}.".format(guess_count, user_number))
 
-main(upper_bound, lower_bound, user_number, comp_number, guess_count)
+main(upper_bound, lower_bound)
