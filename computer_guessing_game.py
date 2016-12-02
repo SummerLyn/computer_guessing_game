@@ -54,6 +54,9 @@ def adjust_lower(user_number, comp_number, lower_bound):
 
 def ask_higher_lower(user_number, comp_number):
     """
+    input: user's number and comp's number
+    usage: prints an input asking user if their number is higher or lower
+    output: n/a
     """
     if user_number == comp_number:
         print("The computer guessed it!")
