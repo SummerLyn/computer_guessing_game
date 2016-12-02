@@ -29,7 +29,6 @@ def computer_guess(upper_bound, lower_bound, guess_count):
     output: computer's guess as integer, increments guess_count by 1
     """
     comp_number = guess_count + 1
-    higher_or_lower = input("The computer guessed {}, is that higher (H) or lower (L)? > ".format(comp_number))
     return comp_number
 
 def check_number(user_number, comp_number, upper_bound, lower_bound):
@@ -47,6 +46,14 @@ def check_number(user_number, comp_number, upper_bound, lower_bound):
             lower_bound = comp_number + 1
         return True
 
+def ask_higher_lower(user_number, comp_number):
+    """
+    """
+    if user_number == comp_number:
+        print("The computer guessed it!")
+    else:
+        higher_or_lower = input("The computer guessed number {}, is your number higher (H) or lower (L)? > ".format(comp_number)).lower()
+
 def main(upper_bound, lower_bound):
     """
     input: upper and lower bounds
@@ -55,9 +62,10 @@ def main(upper_bound, lower_bound):
     """
     guess_count = 0
     user_number = generate_user_number(upper_bound, lower_bound)
-    comp_number = computer_guess(upper_bound, lower_bound, guess_count)
+    comp_number = 0
     while check_number(user_number, comp_number, upper_bound, lower_bound):
         comp_number = computer_guess(upper_bound, lower_bound, guess_count)
+        higher_or_lower = ask_higher_lower(user_number, comp_number)
         guess_count += 1
     print("It took the computer {} guesses to find {}.".format(guess_count, user_number))
 
